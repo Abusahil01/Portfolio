@@ -1,0 +1,146 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #E0E0E0;
+    overflow-x: hidden;
+}
+
+/* 3D Background Canvas */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation Link Styling */
+.nav-link {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #38bdf8; /* sky-400 */
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Skill Card Hover Effect */
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* Section Fade-in Animation on Scroll */
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Text Character Animation */
+.hero-text-char {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInChar 0.5s forwards;
+}
+
+@keyframes fadeInChar {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Timeline Custom Styles */
+.timeline-dot {
+    position: absolute;
+    left: -1rem; /* -left-4 */
+    top: 0.25rem; /* top-1 */
+    width: 2rem; /* w-8 */
+    height: 2rem; /* h-8 */
+    background-color: #1f2937; /* bg-gray-800 */
+    border: 2px solid #0ea5e9; /* border-sky-500 */
+    border-radius: 9999px; /* rounded-full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.timeline-dot::after {
+    content: '';
+    width: 1rem; /* w-4 */
+    height: 1rem; /* h-4 */
+    background-color: #0ea5e9; /* bg-sky-500 */
+    border-radius: 9999px; /* rounded-full */
+}
+.timeline-content {
+    transition: all 0.3s ease;
+}
+.timeline-content:hover {
+    box-shadow: 0 1rem 1.5rem rgba(14, 165, 233, 0.2);
+}
+
+/* Education Timeline Dots */
+.education-item {
+    margin-bottom: 1.5rem; /* mb-6 */
+    position: relative;
+}
+.education-dot {
+    position: absolute;
+    left: -0.4rem;
+    top: 0.25rem; /* top-1 */
+    width: 0.75rem; /* w-3 */
+    height: 0.75rem; /* h-3 */
+    background-color: #0ea5e9; /* bg-sky-500 */
+    border-radius: 9999px; /* rounded-full */
+}
+
+/* Contact Button Custom Styles */
+.contact-button {
+    display: inline-block;
+    background-color: #0ea5e9; /* bg-sky-500 */
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 2rem; /* py-3 px-8 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: all 0.3s ease;
+    box-shadow: 0 0.5rem 1rem rgba(14, 165, 233, 0.3);
+}
+.contact-button:hover {
+    background-color: #0284c7; /* hover:bg-sky-600 */
+    transform: scale(1.05);
+}
